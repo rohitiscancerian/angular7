@@ -17,8 +17,8 @@ export function loggerCallback(logLevel, message, piiEnabled) {
   console.log(message);
 }
 
-private protectedResourceMap : Map<string, Array<string>> =  
-new Map([["http://localhost:7071/api/", ["https://letsbuildit.onmicrosoft.com/demoapi/demo.read"]]]);
+export const protectedResourceMap : [string, string[]][] =  
+ [["http://localhost:7071/api/", ["https://letsbuildit.onmicrosoft.com/demoapi/demo.read"]]];
 
 
 @NgModule({
