@@ -12,13 +12,14 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 
 import { MsalModule, MsalGuard, MsalInterceptor, MsalService } from '@azure/msal-angular';
 import { LogLevel } from 'msal';
+import { AppBootstrapModule } from './Bootstrap/app-bootstrap.module';
 
 export function loggerCallback(logLevel, message, piiEnabled) {
   console.log(message);
 }
 
 export const protectedResourceMap : [string, string[]][] =  
- [["http://localhost:7071/api/", ["https://letsbuildit.onmicrosoft.com/demoapi/demo.read"]]];
+ [["https://localhost:44380", ["https://letsbuildit.onmicrosoft.com/demoapi/demo.read"]]];
 
 
 @NgModule({
@@ -33,10 +34,11 @@ export const protectedResourceMap : [string, string[]][] =
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    AppBootstrapModule,
     MsalModule.forRoot({
-      authority: "https://login.microsoftonline.com/tfp/letsbuildit.onmicrosoft.com/B2C_1_SiUpIn",
-      consentScopes: ["https://letsbuildit.onmicrosoft.com/demoapi/demo.read"],
-      clientID: "c17514de-1ccc-4bca-b4c7-92d1f8eb506a",
+      authority: "https://login.microsoftonline.com/tfp/GPHCDEVAADB2C.onmicrosoft.com/B2C_1_Auth-SignUpIn",
+      consentScopes: ["https://gphcdevaadb2c.onmicrosoft.com/revalapi/user_impersonation", "openid" ,"offline_access"],
+      clientID: "9a95c49c-74fb-403a-8f15-b86dfd6c0caa",
       popUp: true,
       protectedResourceMap: protectedResourceMap,
       postLogoutRedirectUri: "https://localhost:44356/",

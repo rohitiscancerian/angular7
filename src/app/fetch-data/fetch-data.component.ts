@@ -1,18 +1,24 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { sharedStylesheetJitUrl } from '@angular/compiler';
 
 @Component({
-  selector: 'app-fetch-data',
-  templateUrl: './fetch-data.component.html'
+  selector: 'app-save-reval-entry',
+  templateUrl: './fetch-data.component.html',
+  styleUrls : ['./fetch-data.scss']
+  
 })
 export class FetchDataComponent {
   public forecasts: WeatherForecast[];
-
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<WeatherForecast[]>(baseUrl + 'api/SampleData/WeatherForecasts').subscribe(result => {
-      this.forecasts = result;
-    }, error => console.error(error));
+    // http.get<WeatherForecast[]>(baseUrl + 'api/SampleData/WeatherForecasts').subscribe(result => {
+    //   this.forecasts = result;
+    // }, error => console.error(error));
+    
   }
+
+  
+
 }
 
 interface WeatherForecast {
