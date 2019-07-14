@@ -5,7 +5,7 @@ import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
 export function getBaseUrl() {
-  return "https://localhost:44356/";
+  return "https://webapp-t1dev-revalapi-6eb6.azurewebsites.net";
 }
 
 const providers = [

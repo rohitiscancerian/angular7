@@ -18,8 +18,8 @@ export function loggerCallback(logLevel, message, piiEnabled) {
   console.log(message);
 }
 
-export const protectedResourceMap : [string, string[]][] =  
- [["https://localhost:44380", ["https://letsbuildit.onmicrosoft.com/demoapi/demo.read"]]];
+export const protectedResourceMap: [string, string[]][] =
+ [["https://webapp-t1dev-revalapi-6eb6.azurewebsites.net", ["https://letsbuildit.onmicrosoft.com/demoapi/demo.read"]]];
 
 
 @NgModule({
