@@ -1,6 +1,18 @@
 <body>
   <app-nav-menu></app-nav-menu>
   <div class="container">
-    <router-outlet></router-outlet>
+      <div class="center" *ngIf="!isUserLoggedIn()">
+        <button (click)="login()">Login</button>
+        <button (click)="signup()">Sign Up</button>
+      </div>
+    
+      <div class="center" *ngIf="isUserLoggedIn()">
+        <h1>Welcome</h1>
+        <h4> {{useremail()}}</h4>
+        <button (click)="logout()">Logout</button>
+      </div>
   </div>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div> 
 </body>

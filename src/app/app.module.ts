@@ -13,7 +13,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 //import { MsalModule, MsalGuard, MsalInterceptor, MsalService } from '@azure/msal-angular';
 import { LogLevel } from 'msal';
 import { AppBootstrapModule } from './Bootstrap/app-bootstrap.module';
-import { MsalService }  from './service/msal.service';
+import { MsalService } from './service/msal.service';
 
 export function loggerCallback(logLevel, message, piiEnabled) {
   console.log(message);

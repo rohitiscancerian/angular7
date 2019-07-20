@@ -1,21 +1,22 @@
 import { Component } from '@angular/core';
 import * as Msal from 'msal';
-import { MsalService }  from './service/msal.service';
+import { MsalService } from './service/msal.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss'],
+  providers : [MsalService]
 })
 export class AppComponent {
   title = 'b2c-basic-app';
 
-  constructor(private msalService: MsalService){
+  constructor(private msalService: MsalService) {
 
   }
 
-  useremail(){
-    let useremail = this.msalService.getUserEmail();
+  useremail() {
+    const useremail = this.msalService.getUserEmail();
     return useremail;
   }
 
